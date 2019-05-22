@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>START GAME_GOOD LUCK HAVE FUN</title>
+</head>
+<body>
+<table style="width: 190px;height: 200px;border: solid 1px blue;position: absolute;background: antiquewhite">
+    <tr><td><input type="button" value="Retart" style="width: 60px;height: 30px" onclick="retart()"/></td></tr>
+    <tr><td>Score:<span id="Score"></span></td></tr>
+    <tr><td><input type="button" value="RandomLeve" style="width: 100px;height: 30px" onclick="RandomLeve()"/></td></tr>
+</table>
+<canvas id="MyCanvas" width="1280" height="650"  style="border: solid 1px blue ;position: absolute;
+left: 200px;background-image: url(Capture.PNG)"></canvas>
+
+<script>
+    // confirm("You want play this game ?");
+    let CV =document.getElementById("MyCanvas");
+    let ctx = CV.getContext('2d');
+    let BroadGame =function (x,y) {
+        this.x = x;
+        this.y = y;
+        this.Draw = function () {
+            ctx.beginPath();
+            ctx.rect( this.x,this.y,65,30);
+            ctx.fillStyle = "rgb(15,100,147)";
+            ctx.fill();
+        };
+    };
+    let Difi_Game =215;
+    let sizeArrayx = 0;
+    let sizeArrayy = 0;
+    let mangx =[];
+    let mangy =[];
+    for (let i =0;i<40;i++){
+        mangx.push(sizeArrayx);
+        sizeArrayx +=80;
+    }
+    for (let i =0;i<6;i++){
+        mangy.push(sizeArrayy);
+        sizeArrayy +=35;
+    }
+
+    let Thanhdo = function (speed) {
+        this.x = 600;
+        this.y = 620;
+        this.MoveRight = function () {
+            this.x += speed;
+        };
+        this.MoveLeft = function () {
+            this.x -=speed;
+        }
+        this.Draw = function () {
+            ctx.beginPath();
+            ctx.rect(this.x,this.y,200,10);
+            ctx.fillStyle = "rgb(5,90,17)";
+            ctx.fill();
+        };
+    };
+
+    let speedx =5;
+    let speedy =5;
+    let quabong = function () {
+        this.x =500;
+        this.y =300;
+        this.draw = function () {
+            ctx.beginPath();
+            ctx.arc(this.x,this.y,10,0,2*Math.PI);
+            ctx.fillStyle ="rgb(125,10,17)";
+            ctx.fill();
+            ctx.closePath();
+        };
+        this.MoveRight =function () {
+            this.x += speedx;
+        };
+        this.MoveLeft =function () {
+            this.y +=speedy;
+        }
+    };
+
+    let Quabong =new quabong();
+    let thanhdo = new Thanhdo(30);
+    function moveselection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                thanhdo.MoveLeft();
+                break;
+            case 39:
+                thanhdo.MoveRight();
+                break;
+        }
+    }
+
+    function retart() {
+        window.location.reload();
+    }
+
+    function RandomLeve() {
+        mangy.push(Difi_Game);
+        Difi_Game +=35;
+    }
+
+    function chay() {
+        ctx.clearRect(0, 0, CV.width, CV.height);
+        Quabong.draw();
+        Quabong.MoveLeft();
+        Quabong.MoveRight();
+        if ( thanhdo.y-10 == Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<600) {
+            speedx =-speedx*(Math.sin(-45));
+            speedy =-speedy*(Math.sin(95));
+        }
+        if (Quabong.x < 0 || Quabong.x >1280 ) {
+            speedx = -speedx;
+        }
+        if (Quabong.y < 0  ) {
+                speedy = -speedy;
+        }
+        for (let i=0;i<mangx.length;i++){
+            for (let j=0;j<mangy.length;j++){
+                let drawgame = new BroadGame(mangx[i],mangy[j]);
+                drawgame.Draw();
+            }
+        }
+        thanhdo.Draw();
+        window.addEventListener("keydown", moveselection);
+
+        setTimeout(chay,10);
+    }
+    chay();
+
+
+</script>
+</body>
+</html>
