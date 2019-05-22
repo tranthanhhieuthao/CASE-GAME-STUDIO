@@ -27,12 +27,13 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
             ctx.fill();
         };
     };
+    let score =0;
     let Difi_Game =215;
     let sizeArrayx = 0;
     let sizeArrayy = 0;
     let mangx =[];
     let mangy =[];
-    for (let i =0;i<40;i++){
+    for (let i =0;i<16;i++){
         mangx.push(sizeArrayx);
         sizeArrayx +=80;
     }
@@ -121,8 +122,21 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
                 drawgame.Draw();
             }
         }
+
+        for (let i = mangx.length-1;i>0;i--) {
+            for (let j = 0; j < mangy.length; j++) {
+            if (Quabong.x > mangx[i]+65 && Quabong.y < mangy[j]+30) {
+                speedx = -speedx;
+                speedy = -speedy;
+                mangx.splice(i,1);
+                mangy.splice(j,1);
+                score ++;
+            }
+        }
+        }
         thanhdo.Draw();
         window.addEventListener("keydown", moveselection);
+        document.getElementById("Score").innerHTML =score;
 
         setTimeout(chay,10);
     }
