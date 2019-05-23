@@ -11,9 +11,11 @@
       <change afterPath="$PROJECT_DIR$/../Baithigiuaki/Bai 2.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Baithigiuaki/Bai 3 remote.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Baithigiuaki/chuongtrinhsolonnhat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DeBug/Debug.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/GAME CASE STUDIO.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Phát triển chương trình sử dụng Remote để điều khiển Tivi Mục tiêu/Phát triển chương trình sử dụng Remote để điều khiển Tivi Mục tiêu.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Phát triển game lái xe/.idea/Phát triển game lái xe.iml" afterDir="false" />
@@ -41,6 +43,12 @@
       <change afterPath="$PROJECT_DIR$/../[Bài tập] Phát triển game lái xe/[Bài tập] Phát triển game lái xe.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../[Bài tập] Phát triển trò chơi cờ ca-ro/[Bài tập] Phát triển trò chơi cờ ca-ro.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../[Bài tập] Phát triển trò chơi cờ ca-ro/carogame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../[Bài tập] Sử dụng thuật toán tìm kiếm/.idea/[Bài tập] Sử dụng thuật toán tìm kiếm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../[Bài tập] Sử dụng thuật toán tìm kiếm/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../[Bài tập] Sử dụng thuật toán tìm kiếm/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../[Bài tập] Sử dụng thuật toán tìm kiếm/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../[Bài tập] Sử dụng thuật toán tìm kiếm/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../[Bài tập] Sử dụng thuật toán tìm kiếm/[Bài tập] Sử dụng thuật toán tìm kiếm.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../[Bài tập] Validate account/[Bài tập] Validate account.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../[Bài tập] Validate account/[Bài tập] Validate số điện thoại.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../[Bài tập] Validate account/[Bài tập] Validate tên của lớp học.html" afterDir="false" />
@@ -88,7 +96,7 @@
       <change afterPath="$PROJECT_DIR$/../thuchanhchuoi/kiemtrachuviethoa.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../thuchanhchuoi/kiemtramaquocgiamy.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Chuyển đổi giữa feet và meter/Chuyển đổi giữa feet và meter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Chuyển đổi giữa feet và meter/Chuyển đổi giữa feet và meter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GAME CASE STUDIO.html" beforeDir="false" afterPath="$PROJECT_DIR$/GAME CASE STUDIO.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hàm kiểm tra số nguyên tố/Hàm kiểm tra số nguyên tố.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Hàm kiểm tra số nguyên tố/Hàm kiểm tra số nguyên tố.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Kiểm tra từ đối xứng/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Kiểm tra từ đối xứng/.idea/workspace.xml" afterDir="false" />
@@ -188,8 +196,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GAME CASE STUDIO.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="32" />
+            <state relative-caret-position="236">
+              <caret line="109" column="93" selection-start-line="109" selection-start-column="93" selection-end-line="109" selection-end-column="93" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -220,10 +228,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="250" />
-    <option name="y" value="39" />
-    <option name="width" value="1400" />
-    <option name="height" value="992" />
+    <option name="x" value="299" />
+    <option name="y" value="44" />
+    <option name="width" value="1027" />
+    <option name="height" value="1025" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -231,6 +239,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,14 +251,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../[Bài tập] Phát triển game lái xe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../[Bài tập] Luyện tập sử dụng biểu thức chính quy" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -286,12 +294,13 @@
       <option name="presentableId" value="Default" />
       <updated>1558517951890</updated>
       <workItem from="1558517953041" duration="5202000" />
-      <workItem from="1558529382531" duration="18183000" />
+      <workItem from="1558529382531" duration="18549000" />
+      <workItem from="1558573066091" duration="15291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23385000" />
+    <option name="totallyTimeSpent" value="39042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -325,7 +334,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>mock:///</url>
           <line>60</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -337,8 +345,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GAME CASE STUDIO.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="32" />
+        <state relative-caret-position="236">
+          <caret line="109" column="93" selection-start-line="109" selection-start-column="93" selection-end-line="109" selection-end-column="93" />
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />

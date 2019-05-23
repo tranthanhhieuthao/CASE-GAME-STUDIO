@@ -33,15 +33,16 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
     let sizeArrayy = 0;
     let mangx =[];
     let mangy =[];
-    for (let i =0;i<16;i++){
-        mangx.push(sizeArrayx);
-        sizeArrayx +=80;
-    }
-    for (let i =0;i<6;i++){
-        mangy.push(sizeArrayy);
-        sizeArrayy +=35;
-    }
+    for (let j=0;j<6;j++) {
 
+        for (let i = 0; i < 16; i++) {
+            mangy.push(sizeArrayy);
+            mangx.push(sizeArrayx);
+            sizeArrayx += 80;
+        }
+        sizeArrayy += 35;
+        sizeArrayx = 0
+    }
     let Thanhdo = function (speed) {
         this.x = 600;
         this.y = 620;
@@ -50,7 +51,7 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         };
         this.MoveLeft = function () {
             this.x -=speed;
-        }
+        };
         this.Draw = function () {
             ctx.beginPath();
             ctx.rect(this.x,this.y,200,10);
@@ -59,8 +60,8 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         };
     };
 
-    let speedx =5;
-    let speedy =5;
+    let speedx =2;
+    let speedy =2;
     let quabong = function () {
         this.x =500;
         this.y =300;
@@ -106,9 +107,8 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         Quabong.draw();
         Quabong.MoveLeft();
         Quabong.MoveRight();
-        if ( thanhdo.y-10 == Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<600) {
-            speedx =-speedx*(Math.sin(-45));
-            speedy =-speedy*(Math.sin(95));
+        if ( thanhdo.y-10 == Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<230) {
+            speedy =-speedy;
         }
         if (Quabong.x < 0 || Quabong.x >1280 ) {
             speedx = -speedx;
@@ -116,24 +116,24 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         if (Quabong.y < 0  ) {
                 speedy = -speedy;
         }
+        if (Quabong.y == CV.height){
+            alert("Ban da thua,diem cua ban la"+" "+score);
+            location.reload();
+        }
         for (let i=0;i<mangx.length;i++){
-            for (let j=0;j<mangy.length;j++){
-                let drawgame = new BroadGame(mangx[i],mangy[j]);
+                let drawgame = new BroadGame(mangx[i],mangy[i]);
                 drawgame.Draw();
             }
-        }
-
         for (let i = mangx.length-1;i>0;i--) {
-            for (let j = 0; j < mangy.length; j++) {
-            if (Quabong.x > mangx[i]+65 && Quabong.y < mangy[j]+30) {
-                speedx = -speedx;
-                speedy = -speedy;
-                mangx.splice(i,1);
-                mangy.splice(j,1);
-                score ++;
+                if (Quabong.x > mangx[i] && Quabong.x < mangx[i] + 65 &&
+                    Quabong.y < mangy[i] + 30 && Quabong.y > mangy[i]) {
+                    speedy = -speedy;
+                    mangx.splice(i, 1);
+                    mangy.splice(i, 1);
+                    score++;
+                }
             }
-        }
-        }
+
         thanhdo.Draw();
         window.addEventListener("keydown", moveselection);
         document.getElementById("Score").innerHTML =score;
