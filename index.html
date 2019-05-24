@@ -12,27 +12,30 @@
 </table>
 <canvas id="MyCanvas" width="1280" height="650"  style="border: solid 1px blue ;position: absolute;
 left: 200px;background-image: url(Capture.PNG)"></canvas>
-
 <script>
-    // confirm("You want play this game ?");
+
     let CV =document.getElementById("MyCanvas");
     let ctx = CV.getContext('2d');
     let BroadGame =function (x,y) {
         this.x = x;
         this.y = y;
         this.Draw = function () {
-            ctx.beginPath();
-            ctx.rect( this.x,this.y,65,30);
-            ctx.fillStyle = "rgb(15,100,147)";
-            ctx.fill();
+            let image = new Image();
+            image.src = "purple-rectangle-hi copy.png";
+            ctx.drawImage( image, this.x, this.y, 65, 30);
         };
     };
+
     let score =0;
-    let Difi_Game =215;
     let sizeArrayx = 0;
     let sizeArrayy = 0;
     let mangx =[];
     let mangy =[];
+    let Boomx;
+    let Boomy;
+    let speedx =5;
+    let speedy =5;
+    let n=0;
     for (let j=0;j<6;j++) {
         for (let i = 0; i < 16; i++) {
             mangy.push(sizeArrayy);
@@ -52,32 +55,41 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
             this.x -=speed;
         };
         this.Draw = function () {
-            ctx.beginPath();
-            ctx.rect(this.x,this.y,200,10);
-            ctx.fillStyle = "rgb(5,90,17)";
-            ctx.fill();
+            let image = new Image();
+            image.src = "Thanhdohehe.png";
+            ctx.drawImage( image, this.x, this.y, 200, 10);
         };
     };
 
-    let speedx =5;
-    let speedy =5;
+
     let quabong = function (x,y) {
-        this.x =x;
-        this.y =y;
+        this.x = x;
+        this.y = y;
         this.draw = function () {
-            ctx.beginPath();
-            ctx.arc(this.x,this.y,10,0,2*Math.PI);
-            ctx.fillStyle ="rgb(125,10,17)";
-            ctx.fill();
-            ctx.closePath();
+            let image = new Image();
+            image.src = "bongbay.png";
+            ctx.drawImage(image, this.x, this.y, 50, 50);
         };
-        this.MoveRight =function () {
+        this.MoveRight = function () {
             this.x += speedx;
         };
-        this.MoveLeft =function () {
-            this.y +=speedy;
-        }
+        this.MoveLeft = function () {
+            this.y += speedy;
+        };
+        this.ListAnimation = ["Anhno/anh1.png", "Anhno/anh2.png", "Anhno/anh3.png", "Anhno/anh4.png", "Anhno/anh5.png", "Anhno/tanh6.png",
+            "Anhno/anh7.png", "Anhno/anh8.png", "Anhno/anh9.png", "Anhno/anh10.png", "no/Aanhno1.png", "Anhno/anhno2.png", "Anhno/anhno3.png",
+            "Anhno/anhno4.png", "Anhno/anhno5.png"];
+        this.Animation = function (x1, y1) {
+            let image = new Image();
+            image.onload = function(){
+                    ctx.drawImage(image, x1, y1, 100, 100);
+            };
+            image.src = this.ListAnimation[n];
+            n++;
+            if (n>14) n=0;
+        };
     };
+
 
     let Quabong =new quabong(500,300);
     let thanhdo = new Thanhdo(30);
@@ -91,39 +103,24 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
                 break;
         }
     }
-    let i=0;
-    let Anhno = function () {
-        this.Anhno =["Anhno/anh1.png","Anhno/anh2.png","Anhno/anh3.png","Anhno/anh4.png","Anhno/anh5.png","Anhno/tanh6.png",
-            "Anhno/anh7.png","Anhno/anh8.png","Anhno/anh9.png","Anhno/anh10.png","no/Aanhno1.png","Anhno/anhno2.png","Anhno/anhno3.png","Anhno/anhno4.png","Anhno/anhno5.png"];
-        this.Animation = function (x,y) {
-            let image = new Image();
-                image.onload = function () {
-                    ctx.drawImage(image, x, y, 100, 100)
-                };
-                image.src = this.Anhno[i];
-                i++;
-            }
-    };
-    let anhno = new Anhno();
+
     function retart() {
         window.location.reload();
     }
 
-    function RandomLeve() {
-        mangy.push(Difi_Game);
-        Difi_Game +=35;
-    }
 
     function chay() {
         ctx.clearRect(0, 0, CV.width, CV.height);
-        anhno.Animation(600, 200);
         Quabong.draw();
         Quabong.MoveLeft();
         Quabong.MoveRight();
-        if ( thanhdo.y-10 === Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<230) {
+        thanhdo.Draw();
+        window.addEventListener("keydown", moveselection);
+        document.getElementById("Score").innerHTML =score;
+        if ( thanhdo.y-50 === Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<190) {
             speedy =-speedy;
         }
-        if (Quabong.x < 0 || Quabong.x >1280 ) {
+        if (Quabong.x < 0 || Quabong.x >1280-50 ) {
             speedx = -speedx;
         }
         if (Quabong.y < 0  ) {
@@ -137,24 +134,28 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
                 let drawgame = new BroadGame(mangx[i],mangy[i]);
                 drawgame.Draw();
             }
-        for (let i = mangx.length-1;i>0;i--) {
-                if (Quabong.x > mangx[i] && Quabong.x < mangx[i] + 65 &&
-                    Quabong.y < mangy[i] + 30 && Quabong.y > mangy[i]) {
-                    // anhno.Animation(mangx[i], mangy[i]);
-                    speedy = -speedy;
-                    mangx.splice(i, 1);
-                    mangy.splice(i, 1);
-                    score++;
-                }
 
-            }
-        thanhdo.Draw();
-        window.addEventListener("keydown", moveselection);
-        document.getElementById("Score").innerHTML =score;
-        setTimeout(chay,20);
+        setTimeout(chay,10);
     }
-
     chay();
+
+    function EffectBoom() {
+        for (let i =mangx.length-1;i>0;i--) {
+            if (Quabong.x > mangx[i] && Quabong.x < mangx[i] + 65 &&
+               Quabong.y < mangy[i] + 35 && Quabong.y > mangy[i]) {
+                speedy = -speedy;
+                Boomx = mangx[i];
+                Boomy = mangy[i];
+               mangx.splice(i,1);
+               mangy.splice(i,1);
+               score++;
+            }
+        }
+        Quabong.Animation(Boomx, Boomy-70);
+        setTimeout(EffectBoom,10);
+    }
+    EffectBoom();
+
 
 
 
