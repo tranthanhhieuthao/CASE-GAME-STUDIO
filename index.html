@@ -34,7 +34,6 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
     let mangx =[];
     let mangy =[];
     for (let j=0;j<6;j++) {
-
         for (let i = 0; i < 16; i++) {
             mangy.push(sizeArrayy);
             mangx.push(sizeArrayx);
@@ -60,11 +59,11 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         };
     };
 
-    let speedx =2;
-    let speedy =2;
-    let quabong = function () {
-        this.x =500;
-        this.y =300;
+    let speedx =5;
+    let speedy =5;
+    let quabong = function (x,y) {
+        this.x =x;
+        this.y =y;
         this.draw = function () {
             ctx.beginPath();
             ctx.arc(this.x,this.y,10,0,2*Math.PI);
@@ -80,7 +79,7 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         }
     };
 
-    let Quabong =new quabong();
+    let Quabong =new quabong(500,300);
     let thanhdo = new Thanhdo(30);
     function moveselection(evt) {
         switch (evt.keyCode) {
@@ -92,7 +91,20 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
                 break;
         }
     }
-
+    let i=0;
+    let Anhno = function () {
+        this.Anhno =["Anhno/anh1.png","Anhno/anh2.png","Anhno/anh3.png","Anhno/anh4.png","Anhno/anh5.png","Anhno/tanh6.png",
+            "Anhno/anh7.png","Anhno/anh8.png","Anhno/anh9.png","Anhno/anh10.png","no/Aanhno1.png","Anhno/anhno2.png","Anhno/anhno3.png","Anhno/anhno4.png","Anhno/anhno5.png"];
+        this.Animation = function (x,y) {
+            let image = new Image();
+                image.onload = function () {
+                    ctx.drawImage(image, x, y, 100, 100)
+                };
+                image.src = this.Anhno[i];
+                i++;
+            }
+    };
+    let anhno = new Anhno();
     function retart() {
         window.location.reload();
     }
@@ -104,10 +116,11 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
 
     function chay() {
         ctx.clearRect(0, 0, CV.width, CV.height);
+        anhno.Animation(600, 200);
         Quabong.draw();
         Quabong.MoveLeft();
         Quabong.MoveRight();
-        if ( thanhdo.y-10 == Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<230) {
+        if ( thanhdo.y-10 === Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<230) {
             speedy =-speedy;
         }
         if (Quabong.x < 0 || Quabong.x >1280 ) {
@@ -116,7 +129,7 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         if (Quabong.y < 0  ) {
                 speedy = -speedy;
         }
-        if (Quabong.y == CV.height){
+        if (Quabong.y === CV.height){
             alert("Ban da thua,diem cua ban la"+" "+score);
             location.reload();
         }
@@ -127,20 +140,24 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         for (let i = mangx.length-1;i>0;i--) {
                 if (Quabong.x > mangx[i] && Quabong.x < mangx[i] + 65 &&
                     Quabong.y < mangy[i] + 30 && Quabong.y > mangy[i]) {
+                    // anhno.Animation(mangx[i], mangy[i]);
                     speedy = -speedy;
                     mangx.splice(i, 1);
                     mangy.splice(i, 1);
                     score++;
                 }
-            }
 
+            }
         thanhdo.Draw();
         window.addEventListener("keydown", moveselection);
         document.getElementById("Score").innerHTML =score;
-
-        setTimeout(chay,10);
+        setTimeout(chay,20);
     }
+
     chay();
+
+
+
 
 
 </script>
