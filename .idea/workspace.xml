@@ -12,11 +12,6 @@
       <change afterPath="$PROJECT_DIR$/../Baithigiuaki/Bai 3 remote.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Baithigiuaki/chuongtrinhsolonnhat.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../DeBug/Debug.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/GAME CASE STUDIO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Phát triển chương trình sử dụng Remote để điều khiển Tivi Mục tiêu/Phát triển chương trình sử dụng Remote để điều khiển Tivi Mục tiêu.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Phát triển game lái xe/.idea/Phát triển game lái xe.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Phát triển game lái xe/.idea/misc.xml" afterDir="false" />
@@ -196,10 +191,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="152" column="31" selection-start-line="152" selection-start-column="31" selection-end-line="152" selection-end-column="31" />
+            <state relative-caret-position="882">
+              <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2383#2666#0" />
               </folding>
             </state>
           </provider>
@@ -303,18 +299,18 @@
       <workItem from="1558619076201" duration="1329000" />
       <workItem from="1558661452459" duration="23562000" />
       <workItem from="1558705211420" duration="3104000" />
-      <workItem from="1558712670075" duration="9665000" />
+      <workItem from="1558712670075" duration="11225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82437000" />
+    <option name="totallyTimeSpent" value="83997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2014807" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2014807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -365,10 +361,11 @@
     <entry file="file://$PROJECT_DIR$/CanvasBOOM.js" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="152" column="31" selection-start-line="152" selection-start-column="31" selection-end-line="152" selection-end-column="31" />
+        <state relative-caret-position="882">
+          <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2383#2666#0" />
           </folding>
         </state>
       </provider>
