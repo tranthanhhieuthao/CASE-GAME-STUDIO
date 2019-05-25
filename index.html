@@ -119,6 +119,11 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
                 CountBoom =0;
             }
         };
+        this.Draw = function () {
+            let image = new Image();
+            image.src = "GAMEEND.png";
+            ctx.drawImage( image, 380, 200, 500, 350);
+        };
     };
 
     let Quabong =new quabong(500,300);
@@ -171,9 +176,8 @@ left: 200px;background-image: url(Capture.PNG)"></canvas>
         if (Quabong.y < 0  ) {
                 speedy = -speedy;
         }
-        if (Quabong.y === CV.height){
-            alert("Ban da thua,diem cua ban la"+" "+score);
-            location.reload();
+        if (Quabong.y > CV.height){
+            Quabong.Draw();
         }
         for (let i=0;i<mangx.length;i++){
                 let drawgame = new BroadGame(mangx[i],mangy[i]);
