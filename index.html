@@ -115,6 +115,7 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
             this.y += speedy;
 
         };
+        //tạo 1 mảng ảnh dùng để tạo hình ảnh chuyển động
         this.ListAnimation = ["Anhno/anh1.png","Anhno/anh1.png", "Anhno/anh2.png", "Anhno/anh2.png",
                               "Anhno/anh3.png", "Anhno/anh3.png", "Anhno/anh4.png", "Anhno/anh4.png",
                               "Anhno/anh5.png", "Anhno/anh5.png", "Anhno/tanh6.png", "Anhno/tanh6.png",
@@ -133,6 +134,9 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
                 CountBoom =0;
             }
         };
+
+        //Tạo hình ảnh khi thua game
+
         this.Draw = function () {
             let image = new Image();
             image.src = "GAMEEND.png";
@@ -142,7 +146,13 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
 
     let Quabong =new quabong(500,300);
     let thanhdo = new Thanhdo(600,620);
+
+    //Lấy điều kiện mặc định ban đầu thanh đỡ chạy sang phải
+
         thanhdo.MoveRight();
+
+        //Hàm tạo sự kiện khi nhấn nút
+
     function moveselectionOne(evt) {
         switch (evt.keyCode) {
             case 37:
@@ -169,6 +179,8 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
         }
     }
 
+    //Hàm khi nhả nút ctr tốc độ trở về ban đầu
+
     function moveselectionTwo(evt) {
         switch (evt.keyCode) {
             case 17:
@@ -176,6 +188,8 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
                 break;
         }
     }
+
+    //Class dùng để tạo âm thanh
 
     let sound = function(src) {
         this.sound = document.createElement("audio");
@@ -195,6 +209,8 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
     let SoundEnd   = new sound("bensound-funnysong.mp3");
     let Soundhiting = new sound("BOUNCE+1.mp3");
     let SoundBoom = new sound("197919__goup-1__low-boom.wav");
+
+    //Hàm bắt đầu game chứa các điều kiện trong game
 
     function StartGame() {
         SoundBegin.play();
@@ -226,12 +242,18 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
         }
 
         // Kết thúc game sẽ xuất hiện hình ảnh game over
+        // Kết thúc game sẽ xuất hiện âm thanh khác và âm thanh cũ dừng
+        // Kết thúc game hình ảnh game over sẽ xuất hiện
 
         if (Quabong.y > CV.height){
             SoundBegin.stop();
             SoundEnd.play();
             Quabong.Draw();
+            // Kết thúc game hình ảnh thanh đỡ sẽ dừng lại
             speedthanhdo =0;
+            //set lại giá trị cho speed x,y để khi endgame không còn nghe tiếng va chạm nữa
+            speedx =0;
+            speedy =0;
         }
         for (let i=0;i<mangx.length;i++){
                 let drawgame = new BroadGame(mangx[i],mangy[i]);
@@ -240,7 +262,7 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
         setTimeout(StartGame,10);
     }
 
-    //Hiệu ứng BOOM nổ khi viên bi va chạm với gạch
+    //Hàm dùng để tạo Hiệu ứng BOOM nổ khi viên bi va chạm với gạch
 
     function EffectBoom() {
         for (let i =mangx.length-1;i>0;i--) {
@@ -256,7 +278,6 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
             }
         }
         Quabong.Animation(Boomx, Boomy-70);
-
         setTimeout(EffectBoom,5);
     }
     function retart() {

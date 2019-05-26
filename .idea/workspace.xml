@@ -91,7 +91,7 @@
       <change afterPath="$PROJECT_DIR$/../thuchanhchuoi/kiemtrachuviethoa.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../thuchanhchuoi/kiemtramaquocgiamy.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Chuyển đổi giữa feet và meter/Chuyển đổi giữa feet và meter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Chuyển đổi giữa feet và meter/Chuyển đổi giữa feet và meter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hàm kiểm tra số nguyên tố/Hàm kiểm tra số nguyên tố.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Hàm kiểm tra số nguyên tố/Hàm kiểm tra số nguyên tố.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Kiểm tra từ đối xứng/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Kiểm tra từ đối xứng/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Kiểm tra từ đối xứng/Kiểm tra từ đối xứng.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Kiểm tra từ đối xứng/Kiểm tra từ đối xứng.html" afterDir="false" />
@@ -190,8 +190,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="223" column="30" selection-start-line="223" selection-start-column="30" selection-end-line="223" selection-end-column="30" />
+            <state relative-caret-position="488">
+              <caret line="235" column="12" selection-start-line="235" selection-start-column="15" selection-end-line="235" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -306,12 +306,12 @@
       <workItem from="1558712670075" duration="11723000" />
       <workItem from="1558750331229" duration="4581000" />
       <workItem from="1558760925022" duration="7033000" />
-      <workItem from="1558843614594" duration="5206000" />
+      <workItem from="1558843614594" duration="6162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101315000" />
+    <option name="totallyTimeSpent" value="102271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -368,8 +368,8 @@
     <entry file="file://$PROJECT_DIR$/CanvasBOOM.js" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="223" column="30" selection-start-line="223" selection-start-column="30" selection-end-line="223" selection-end-column="30" />
+        <state relative-caret-position="488">
+          <caret line="235" column="12" selection-start-line="235" selection-start-column="15" selection-end-line="235" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
