@@ -193,6 +193,8 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
      };
     let SoundBegin = new sound("bensound-summer.mp3");
     let SoundEnd   = new sound("bensound-funnysong.mp3");
+    let Soundhiting = new sound("BOUNCE+1.mp3");
+    let SoundBoom = new sound("197919__goup-1__low-boom.wav");
 
     function StartGame() {
         SoundBegin.play();
@@ -212,6 +214,7 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
             thanhdo.MoveLeft();
         }
         if ( thanhdo.y-50 === Quabong.y && Quabong.x - thanhdo.x >0 && Quabong.x - thanhdo.x<190) {
+            Soundhiting.play();
             speedy =-speedy;
         }
         if (Quabong.x < 0 || Quabong.x >1280-50 ) {
@@ -247,10 +250,12 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
                 Boomy = mangy[i];
                 mangx.splice(i,1);
                 mangy.splice(i,1);
+                SoundBoom.play();
                 score++;
             }
         }
         Quabong.Animation(Boomx, Boomy-70);
+
         setTimeout(EffectBoom,5);
     }
     function retart() {
