@@ -17,16 +17,12 @@
         <span>Please press "Ctr"</span></td></tr>
     <tr><td><input type="button" value="RandomLevel" style="width: 100px;height: 30px;background-color:cadetblue" onclick="RandomLevel()"/>
         <span>Please press "L"</span></td></tr>
-    <tr>
-
-        <td><input type="button" value="Score" style="width: 60px;height: 30px;background-color: yellowgreen"></td>
+    <tr><td><input type="button" value="Score" style="width: 60px;height: 30px;background-color: yellowgreen"></td>
         <table id="Score" style="width: 110px;height: 60px;border: solid 1px blue;position: absolute;
         background: aliceblue;left: 90px;top: 340px;font-size: 50px;text-align: center">
-        </table></td>
-
-    </tr>
-
+        </table></td></tr>
 </table>
+
 <canvas id="MyCanvas" width="1280" height="650"  style="border: solid 1px blue ;position: absolute;
 left: 230px;background-image: url(Capture.PNG)"></canvas>
 <script>
@@ -43,6 +39,7 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
     let speedy =5;
     let CountBoom=0;
     let speedthanhdo =5;
+
 
     //Tạo mảng vẽ chứa vị trí các viên gạch
 
@@ -65,9 +62,9 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
         };
     };
 
-    let Thanhdo = function () {
-        this.x = 600;
-        this.y = 620;
+    let Thanhdo = function (x,y) {
+        this.x = x;
+        this.y = y;
         this.number =0;
         this.MoveRight = function () {
             this.x += speedthanhdo;
@@ -144,7 +141,7 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
     };
 
     let Quabong =new quabong(500,300);
-    let thanhdo = new Thanhdo();
+    let thanhdo = new Thanhdo(600,620);
         thanhdo.MoveRight();
     function moveselectionOne(evt) {
         switch (evt.keyCode) {
@@ -180,7 +177,25 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
         }
     }
 
+    let sound = function(src) {
+        this.sound = document.createElement("audio");
+        this.sound.src = src;
+        this.sound.setAttribute("preload", "auto");
+        this.sound.setAttribute("controls", "none");
+        this.sound.style.display = "none";
+        document.body.appendChild(this.sound);
+        this.play = function(){
+            this.sound.play();
+        };
+        this.stop = function(){
+            this.sound.pause();
+        }
+     };
+    let SoundBegin = new sound("bensound-summer.mp3");
+    let SoundEnd   = new sound("bensound-funnysong.mp3");
+
     function StartGame() {
+        SoundBegin.play();
         ctx.clearRect(0, 0, CV.width, CV.height);
         Quabong.draw();
         Quabong.MoveLeft();
@@ -209,6 +224,8 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
         // Kết thúc game sẽ xuất hiện hình ảnh game over
 
         if (Quabong.y > CV.height){
+            SoundBegin.stop();
+            SoundEnd.play();
             Quabong.Draw();
             speedthanhdo =0;
         }
@@ -224,13 +241,13 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
     function EffectBoom() {
         for (let i =mangx.length-1;i>0;i--) {
             if (Quabong.x > mangx[i] && Quabong.x < mangx[i] + 65 &&
-               Quabong.y < mangy[i] + 35 && Quabong.y > mangy[i]) {
+                Quabong.y < mangy[i] + 35 && Quabong.y > mangy[i]) {
                 speedy = -speedy;
                 Boomx = mangx[i];
                 Boomy = mangy[i];
-               mangx.splice(i,1);
-               mangy.splice(i,1);
-               score++;
+                mangx.splice(i,1);
+                mangy.splice(i,1);
+                score++;
             }
         }
         Quabong.Animation(Boomx, Boomy-70);
@@ -254,9 +271,6 @@ left: 230px;background-image: url(Capture.PNG)"></canvas>
     }
     StartGame();
     EffectBoom();
-
-
-
 
 </script>
 </body>
